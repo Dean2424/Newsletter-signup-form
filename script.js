@@ -4,8 +4,8 @@ const rightEl = document.getElementById('right')
 
 const userEmailEl = document.getElementById('user-email')
 const invalidEmailEl = document.getElementById('invalid-email')
-const emailInput = document.getElementById('email-input')
-const submitBtnEl = document.getElementById('submit-btn')
+const emailInput = document.getElementById('email')
+const form = document.getElementById('form')
 
 const confirmedMessageEl = document.getElementById('confirmed-message')
 const dismissMessageEl = document.getElementById('dismiss-message')
@@ -22,9 +22,9 @@ function validateEmail(email) {
     return emailRegex.test(email)
 }
 
-submitBtnEl.addEventListener('click', (e) => {
+form.addEventListener('click', (e) => {
     e.preventDefault()
-    const email = emailInput.ariaValueMax.trim()
+    const email = emailInput.value.trim()
 
     if (validateEmail(email)) {
         formSuccess()
